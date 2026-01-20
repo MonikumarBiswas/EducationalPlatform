@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Courses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-5 text-center text-2xl font-bold">
+    Available Courses
+  </header>
+
+  <!-- Courses -->
+  <main class="max-w-6xl mx-auto p-6">
+    <div id="coursesContainer"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <p class="text-gray-500"> Loading courses...</p>
+    </div>
+
+    <!-- See More Button -->
+    <div class="text-center mt-8">
+      <button id="seeMoreBtn"
+        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition hidden">
+        See More
+      </button>
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="./js/courses.js"></script>
+</body>
+</html>

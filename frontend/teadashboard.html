@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-blue-50 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-6 shadow-lg flex justify-between items-center">
+    <button id="homeBtn"
+      class="bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-gray-100 transition">
+      Home
+    </button>
+    
+    <h1 class="text-2xl font-bold">Teacher Dashboard</h1>
+     
+    <button id="logoutBtn"
+      class="bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-gray-100 transition">
+      Logout
+    </button>
+  </header>
+
+  <main class="max-w-6xl mx-auto p-6 space-y-6">
+
+    <!-- Student Info -->
+    <section class="bg-white rounded-2xl shadow-lg p-6 flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+             class="w-20 h-20 rounded-full border-2 border-blue-400">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-800" id="teacherName">Loading...</h2>
+          <p class="text-gray-600" id="teacherEmail">Loading...</p>
+        </div>
+      </div>
+
+       <div>
+         <h2 class="bg-green-500 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-100 transition cursor-pointer" 
+         id="uploadbtn"> Upload Content </h2>
+      </div>
+
+      <div>
+        <p class="text-gray-700">Bank Balance</p>
+        <p class="text-2xl font-bold text-green-600" id="teacherBalance">TK 0</p>
+      </div>
+    </section>
+
+    <!-- Courses -->
+    <section class="bg-white rounded-2xl shadow-lg p-6">
+      <h3 class="text-lg font-semibold mb-4" id="cnumber">Uploaded Courses</h3>
+      <div id="uploadedCourses"
+           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <p class="text-gray-500">Loading courses...</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- JS -->
+  <script src="./js/teadashboard.js"></script>
+</body>
+</html>
+  
