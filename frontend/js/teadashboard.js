@@ -38,7 +38,7 @@ async function loadTeacherDashboard() {
     if (person.courses.length === 0) {
       container.innerHTML =
         '<p class="text-gray-500">No courses uploaded yet.</p>';
-      return;
+        return;
     }
 
    

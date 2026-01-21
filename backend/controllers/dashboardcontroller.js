@@ -9,7 +9,7 @@ const dashboardcontroller = async(req , res) =>{
    return res.json({message: "Please login first" })
   }
 
-  const user = await User.findById(userID).populate("uploadedCourses") ;
+  const user = await User.findById(userID).populate("enrolledCourses") ;
   
 
   if(!user){

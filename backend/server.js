@@ -7,6 +7,7 @@ import bodyParser from "body-parser";
 import dashboardcontroller from "./controllers/dashboardcontroller.js";
 import coursecontroller from "./controllers/coursecontroller.js";
 import teachercontroller from "./controllers/teachercontroller.js";
+import enroll from "./controllers/enrollcontroller.js";
 
 
 const app = express() ; 
@@ -32,6 +33,7 @@ app.post("/upload" , coursecontroller.upload) ;
 app.get("/dashboard" , dashboardcontroller) ;
 app.get("/teacher-dashboard" , teachercontroller) ;
 app.get("/course" ,  coursecontroller.allcourses) ;
+app.post("/enroll/:id", enroll) ;
 
 
 
