@@ -1,5 +1,6 @@
 import Course from "../models/Course.js";
 import User from "../models/User.js";
+import Admin from "../models/Admin.js" ;
 
 const enroll = async(req , res)=>{
 
@@ -50,6 +51,17 @@ try{
      {new : true}
     ) ;
 
+
+     await User.findOneAndUpdate(
+      { role: "admin" },
+      {
+        $push :{enrolledCourses : course._id},
+        $inc :{adminEarnings : (price - bonus)}
+      },
+     {new : true}
+    ) ;
+
+ 
     return res.json({
        message:"course enrolled successfully" 
     });

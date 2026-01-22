@@ -1,7 +1,7 @@
 import User from "../models/User.js";
 
 
-const dashboardcontroller = async(req , res) =>{
+const showDashboard = async(req , res) =>{
   
   const userID = req.headers["user-id"] ;
 
@@ -17,7 +17,7 @@ const dashboardcontroller = async(req , res) =>{
   }
 
   if(user){
-    return res.json(user) ;
+    return res.json({ role : user.role} ) ;
   }
 
    
@@ -27,4 +27,4 @@ const dashboardcontroller = async(req , res) =>{
 
 
 
-export default dashboardcontroller ;
+export default showDashboard ;

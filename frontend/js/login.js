@@ -16,12 +16,18 @@ loginform.addEventListener("submit", async (e) => {
 
   const result = await res.json();
 
+  if (result.role === "student") {
+    window.location.href = "dashboard.html";
+  } else if (result.role === "admin") {
+    window.location.href = "admindashboard.html";
+  } else if (result.role === "teacher") {
+    window.location.href = "teadashboard.html";
+  }
+
   if (result._id) {
     alert(`Welcome, ${result.name}!`);
 
     localStorage.setItem("userID", result._id);
-
-    window.location.href = "index.html";
   } else {
     const errorDiv = document.createElement("div");
     errorDiv.id = "login-error";

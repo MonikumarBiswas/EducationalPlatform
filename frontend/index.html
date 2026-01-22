@@ -1,20 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Learning Platform</title>
-   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="flex justify-between gap-4 font-bold border-none">
-      <a href="signup.html">Sign Up</a>
-     <a href="login.html">Log in</a>
-     <a href="dashboard.html">dashboard</a>
-     <a href="teadashboard.html">Teacher dashboard</a>
-     <a href="courses.html"> show courses </a>
- 
-  </div>
-    
+<body class="bg-gray-50">
+
+  <!-- NAVBAR -->
+  <nav class="bg-white shadow-md px-8 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-blue-600">LearnHub</h1>
+
+    <div class="space-x-6 font-medium">
+      <a href="index.html" class="hover:text-blue-600">Home</a>
+      <a href="courses.html" class="hover:text-blue-600">Courses</a>
+     <button id="dashboard" class="hover:text-blue-600 font-medium"> Dashboard</button>
+
+      <a href="#" class="hover:text-blue-600">Help</a>
+      <a href="#"  class="hover:text-blue-600">Contact</a>
+      <button onclick="logout()" class="text-red-500 hover:text-red-700">
+        Logout
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="flex flex-col md:flex-row items-center justify-between px-10 py-16 bg-blue-50">
+    <div class="max-w-xl">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">
+        Learn Anytime, Anywhere
+      </h2>
+      <p class="text-gray-600 mb-6">
+        Join thousands of students learning new skills from expert teachers.
+      </p>
+      <a href="courses.html"
+        class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700">
+        Explore Courses
+      </a>
+    </div>
+
+    <img
+      src="https://via.placeholder.com/400x300"
+      alt="Learning"
+      class="mt-8 md:mt-0 rounded-xl shadow-lg"
+    />
+  </section>
+
+  <!-- ARTICLES SECTION -->
+  <section class="px-10 py-14">
+    <h3 class="text-3xl font-bold text-center mb-10">Why Choose Us?</h3>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h4 class="font-bold text-lg mb-2">Expert Teachers</h4>
+        <p class="text-gray-600">
+          Learn from industry professionals with real-world experience.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h4 class="font-bold text-lg mb-2">Flexible Learning</h4>
+        <p class="text-gray-600">
+          Watch lessons anytime and learn at your own pace.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h4 class="font-bold text-lg mb-2">Affordable Courses</h4>
+        <p class="text-gray-600">
+          High-quality education at a student-friendly price.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white px-10 py-8">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <p class="text-sm">© 2026 LearnHub. All rights reserved.</p>
+
+      <div class="space-x-6 mt-4 md:mt-0">
+        <a href="index.html" class="hover:text-blue-400">Home</a>
+        <a href="#" class="hover:text-blue-400">Help</a>
+        <a href="#" class="hover:text-blue-400">Contact</a>
+        <a href="#" class="hover:text-blue-400">Privacy</a>
+        <a href="#" class="hover:text-blue-400">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  
+
+
+  
+  <script src="./js/selectdashboard.js"> </script>
+
 </body>
 </html>

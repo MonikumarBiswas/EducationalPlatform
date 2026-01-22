@@ -36,7 +36,6 @@
             courseCard.innerHTML = `
               <h4 class="font-semibold text-gray-800 text-lg">${course.title}</h4>
               <p class="text-gray-600 mt-1">${course.description}</p>
-              <p class="text-gray-500 mt-2 text-sm">Instructor: ${course.price}</p>
               <a class="text-[#DA27F5] mt-2 font-bold text-lg" href = "${course.videoLink}"> Class Link  </a>  <br> 
               <a class="text-[#27A9F5] mt-2 font-bold text-lg" href = "${course.materials}"> Class Materials </a> 
             `;

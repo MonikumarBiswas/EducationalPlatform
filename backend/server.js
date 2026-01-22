@@ -8,6 +8,8 @@ import dashboardcontroller from "./controllers/dashboardcontroller.js";
 import coursecontroller from "./controllers/coursecontroller.js";
 import teachercontroller from "./controllers/teachercontroller.js";
 import enroll from "./controllers/enrollcontroller.js";
+import admincontroller from "./controllers/admincontroller.js" ;
+import showDashboard from "./controllers/showDashboard.js" ;
 
 
 const app = express() ; 
@@ -32,8 +34,10 @@ app.post("/upload" , coursecontroller.upload) ;
 
 app.get("/dashboard" , dashboardcontroller) ;
 app.get("/teacher-dashboard" , teachercontroller) ;
+app.get("/admin-dashboard" , admincontroller) ;
 app.get("/course" ,  coursecontroller.allcourses) ;
 app.post("/enroll/:id", enroll) ;
+app.get("/selectdashboard" , showDashboard) ;
 
 
 

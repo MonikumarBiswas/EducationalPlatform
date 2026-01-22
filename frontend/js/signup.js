@@ -17,10 +17,11 @@
       });
 
       const result = await res.json();
-      if(result._id){
+      if(result){
          window.location.href ="login.html" ;
       }
-      console.log(result);
+      
+      
       
     });
 

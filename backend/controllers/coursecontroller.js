@@ -14,7 +14,7 @@ const upload = async(req , res) =>{
         }
 
         const teacher = await User.findById(userID) ;
-        console.log(teacher) ; 
+       
 
         if(!teacher){
            return res.json({message: "user not find"}) ; 

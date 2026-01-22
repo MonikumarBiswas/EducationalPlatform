@@ -20,6 +20,8 @@ const signupUser = async (req, res) => {
       role,
     });
 
+  
+
     return res.json({
       message: "User registered successfully",
       user: {
@@ -54,6 +56,8 @@ const loginUser = async (req, res) => {
     if ( password != pass )
       return res.json({ message: "Incorrect password." });
 
+
+    
     // Send Response
     return res.json({
       _id: user._id,

@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema({
   role: { type: String, enum: ["student", "teacher", "admin"], required: true },
   studentBalance:{ type: Number , default: 10000} , 
   teacherEarnings: { type: Number, default: 0 },
+  adminEarnings: { type: Number, default: 0 },
  
 
   enrolledCourses: [
