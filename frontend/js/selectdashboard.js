@@ -1,5 +1,4 @@
 
-
 async function navigateToDashboard() {
       const userId = localStorage.getItem("userID");
       const res = await fetch( "http://localhost:3000/selectdashboard",
