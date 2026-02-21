@@ -1,4 +1,10 @@
-import  mongoose  from "mongoose" ;
+import mongoose from "mongoose";
+
+const questionSchema = new mongoose.Schema({
+  question: { type: String, required: true },
+  options: [{ type: String }], // 4 options
+  answer: { type: Number, required: true }, // index of correct option (0-3)
+});
 
 const courseSchema = new mongoose.Schema(
   {
@@ -9,23 +15,30 @@ const courseSchema = new mongoose.Schema(
     teacherId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
     teacherName: { type: String, required: true },
     teacherEmail: { type: String, required: true },
-    thumbnail: { type: String, default: "" }, 
-    videoLink: { type: String, default: "" }, 
-    materials:{ type : String, default: " "} , 
+    thumbnail: { type: String, default: "" },
+    videoLink: { type: String, default: "" },
+    materials: { type: String, default: " " },
 
+    // Quiz: array of 5 questions
+    quiz: [questionSchema],
 
-  createdBy: {
-     type: mongoose.Schema.Types.ObjectId,
-     ref: "User",
-   } , 
- 
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
 
     enrolledStudents: [
       {
         studentId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
         enrolledAt: { type: Date, default: Date.now },
       },
-    
+    ],
+
+    completedStudents: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+      },
     ],
   },
   { timestamps: true }

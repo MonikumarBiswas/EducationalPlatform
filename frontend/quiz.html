@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Quiz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-blue-50 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-5 text-center shadow-lg">
+    <h1 class="text-2xl font-bold">📝 Course Quiz</h1>
+    <p class="text-blue-100 text-sm mt-1">Answer all 5 questions. Pass mark is 70%.</p>
+  </header>
+
+  <main class="max-w-3xl mx-auto p-6">
+
+    <!-- Loading / Error -->
+    <div id="loadMsg" class="text-center text-gray-500 mt-10">Loading quiz...</div>
+
+    <!-- Quiz Form -->
+    <form id="quizForm" class="hidden space-y-6">
+      <div id="questionsContainer" class="space-y-6"></div>
+
+      <button type="submit"
+        class="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 transition font-bold text-lg">
+        Submit Quiz
+      </button>
+    </form>
+
+    <!-- Result -->
+    <div id="resultBox" class="hidden mt-8 bg-white rounded-2xl shadow-lg p-8 text-center">
+      <h2 id="resultTitle" class="text-3xl font-bold mb-3"></h2>
+      <p id="resultScore" class="text-xl text-gray-600 mb-4"></p>
+      <div id="certLink" class="hidden mt-4">
+        <a id="certAnchor" href="#"
+          class="inline-block bg-green-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-green-700 transition">
+          🎓 Get Your Certificate
+        </a>
+      </div>
+      <div class="mt-4">
+        <button onclick="window.location.href='dashboard.html'" class="text-blue-600 underline font-medium">Back to
+          Dashboard</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="./js/quiz.js"></script>
+</body>
+
+</html>

@@ -4,7 +4,6 @@ const seeMoreBtn = document.getElementById("seeMoreBtn");
 let allCourses = [];
 let showAll = false;
 
-
 async function loadCourses() {
   try {
     const res = await fetch("http://localhost:3000/course");
@@ -13,7 +12,6 @@ async function loadCourses() {
     allCourses = courses;
     showCourses();
 
-    
     if (allCourses.length > 3) {
       seeMoreBtn.classList.remove("hidden");
     }
@@ -23,7 +21,6 @@ async function loadCourses() {
   }
 }
 
-
 function showCourses() {
   coursesContainer.innerHTML = "";
 
@@ -31,39 +28,37 @@ function showCourses() {
 
   coursesToShow.forEach((course) => {
     const card = document.createElement("div");
-    card.className =
-      "bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition";
+    card.className = "bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition";
+
+    // Thumbnail: use uploaded image or fallback
+    const thumbSrc = course.thumbnail
+      ? `http://localhost:3000/${course.thumbnail}`
+      : "./assests/pic1.png";
 
     card.innerHTML = `
-      <img src="./assests/pic1.png"
-           class="w-full h-40 object-cover rounded-lg mb-4">
+      <img src="${thumbSrc}" 
+           onerror="this.src='./assests/pic1.png'"
+           class="w-full h-44 object-cover">
 
-      <h3 class="text-lg font-semibold text-gray-800">
-        ${course.title}
-      </h3>
+      <div class="p-5">
+        <h3 class="text-lg font-semibold text-gray-800">${course.title}</h3>
 
-      <p class="text-gray-600 mt-2 text-sm">
-        ${course.description}
-      </p>
+        <p class="text-gray-600 mt-2 text-sm line-clamp-2">${course.description}</p>
 
-      <p class="text-blue-600 font-bold mt-3">
-        ৳ ${course.price}
-      </p>
+        <p class="text-blue-600 font-bold mt-3">৳ ${course.price}</p>
 
-      <p class="text-gray-500 text-sm mt-1">
-        Teacher: ${course.teacherName}
-      </p>
+        <p class="text-gray-500 text-sm mt-1">Teacher: ${course.teacherName}</p>
 
-      <button class="w-24 h-8 mt-2 mx-20 rounded-xl bg-yellow-500 text-black font-bold enroll-btn"
-        data-id="${course._id}">
-        Enroll
-      </button>
+        <button class="w-full mt-4 py-2 rounded-xl bg-yellow-500 text-black font-bold enroll-btn hover:bg-yellow-400 transition"
+          data-id="${course._id}">
+          Enroll Now
+        </button>
+      </div>
     `;
 
     coursesContainer.appendChild(card);
   });
 }
-
 
 coursesContainer.addEventListener("click", async (e) => {
   if (!e.target.classList.contains("enroll-btn")) return;
@@ -93,12 +88,10 @@ coursesContainer.addEventListener("click", async (e) => {
   }
 });
 
-
 seeMoreBtn.addEventListener("click", () => {
   showAll = true;
   showCourses();
   seeMoreBtn.classList.add("hidden");
 });
-
 
 loadCourses();

@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Learning Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <!-- Gradient Background Added -->
+
 <body class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 min-h-screen">
 
-  <!-- NAVBAR -->
-  <nav class="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md px-8 py-4 flex justify-between items-center">
+  <nav
+    class="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md px-8 py-4 flex justify-between items-center">
     <h1 class="text-2xl font-bold">LearnHub</h1>
 
-    <div class="space-x-6 font-medium">
+    <div class="flex items-center space-x-5 font-medium">
       <a href="index.html" class="hover:text-yellow-300">Home</a>
       <a href="courses.html" class="hover:text-yellow-300">Courses</a>
       <button id="dashboard" class="hover:text-yellow-300 font-medium">Dashboard</button>
       <a href="#" class="hover:text-yellow-300">Help</a>
       <a href="#" class="hover:text-yellow-300">Contact</a>
-      <button onclick="logout()" class="text-red-200 hover:text-red-400">
-        Logout
-      </button>
+      <!-- Dynamically shows Login or Logout -->
+      <button id="authBtn" class=""></button>
     </div>
   </nav>
 
   <!-- HERO SECTION -->
-  <section class="flex flex-col md:flex-row items-center justify-between px-10 py-16 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">
+  <section
+    class="flex flex-col md:flex-row items-center justify-between px-10 py-16 h-[500px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">
     <div class="max-w-xl">
       <h2 class="text-4xl font-bold mb-4">
         Learn Anytime, Anywhere
@@ -41,11 +43,7 @@
       </a>
     </div>
 
-    <img
-      src="https://via.placeholder.com/400x300"
-      alt="Learning"
-      class="mt-8 md:mt-0 rounded-xl shadow-2xl"
-    />
+    <img src="../frontend/assests/pic2.jpg" alt="Learning" class="mt-2 md:mt-0 rounded-xl shadow-2xl w-full h-full " />
   </section>
 
   <!-- ARTICLES SECTION -->
@@ -53,22 +51,25 @@
     <h3 class="text-3xl font-bold text-center mb-10 text-gray-800">Why Choose Us?</h3>
 
     <div class="grid md:grid-cols-3 gap-8">
-      
-      <div class="bg-gradient-to-br from-white to-blue-100 p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+
+      <div
+        class="bg-gradient-to-br from-white to-blue-100 p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
         <h4 class="font-bold text-lg mb-2 text-blue-700">Expert Teachers</h4>
         <p class="text-gray-600">
           Learn from industry professionals with real-world experience.
         </p>
       </div>
 
-      <div class="bg-gradient-to-br from-white to-purple-100 p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+      <div
+        class="bg-gradient-to-br from-white to-purple-100 p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
         <h4 class="font-bold text-lg mb-2 text-purple-700">Flexible Learning</h4>
         <p class="text-gray-600">
           Watch lessons anytime and learn at your own pace.
         </p>
       </div>
 
-      <div class="bg-gradient-to-br from-white to-pink-100 p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+      <div
+        class="bg-gradient-to-br from-white to-pink-100 p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
         <h4 class="font-bold text-lg mb-2 text-pink-700">Affordable Courses</h4>
         <p class="text-gray-600">
           High-quality education at a student-friendly price.
@@ -96,4 +97,5 @@
   <script src="./js/selectdashboard.js"></script>
 
 </body>
+
 </html>

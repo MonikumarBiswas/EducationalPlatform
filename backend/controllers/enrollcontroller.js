@@ -16,9 +16,22 @@ try{
     return res.json({message: "Only student can enroll the course "}) ;
   }
 
+
   const courseID = req.params.id ;
   
   const course = await Course.findById(courseID);
+
+  let alreadyEnrolled = false;
+
+ user.enrolledCourses.forEach((id) => {
+  if (id.toString() === courseID) {
+    alreadyEnrolled = true;
+  }
+ });
+
+ if (alreadyEnrolled) {
+  return res.json({ message: "Already enrolled the course." });
+ }
 
   if(!course){
     return res.json({message: "Course is not found"}) ;
