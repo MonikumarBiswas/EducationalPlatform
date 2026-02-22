@@ -33,8 +33,7 @@ async function loadStudentDashboard() {
       const hasPassed = quizPassedIds.includes(course._id.toString());
 
 
-      // ── YouTube iframe ─────────────────────────────────────────────────────
-      // Teacher might have entered a watch URL (youtube.com/watch?v=...) — convert to embed
+      // ── YouTube iframe   
       let embedUrl = "";
       if (course.videoLink) {
         embedUrl = course.videoLink;
@@ -58,7 +57,7 @@ async function loadStudentDashboard() {
            </div>`
         : `<p class="text-gray-400 text-sm italic px-1">No video available for this course.</p>`;
 
-      // ── Card ───────────────────────────────────────────────────────────────
+      // ── Card 
       const card = document.createElement("div");
       card.className = "bg-white rounded-2xl shadow-md overflow-hidden flex flex-col";
 

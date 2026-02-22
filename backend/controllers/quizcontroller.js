@@ -5,7 +5,7 @@ import User from "../models/User.js";
 const uploadQuiz = async (req, res) => {
   try {
     const { courseId } = req.params;
-    const { questions } = req.body; // array of {question, options[4], answer(0-3)}
+    const { questions } = req.body; 
 
     if (!questions || questions.length !== 5) {
       return res.json({ message: "Exactly 5 questions are required." });
@@ -49,6 +49,8 @@ const getQuiz = async (req, res) => {
   }
 };
 
+
+
 // Student submits quiz answers
 const submitQuiz = async (req, res) => {
   try {
@@ -84,7 +86,11 @@ const submitQuiz = async (req, res) => {
     });
 
     const score = (correct / 5) * 100;
-    const passed = score >= 70;
+  
+    let passed = false ; 
+    if( score >= 70){
+      passed = true ; 
+    }
 
     // If passed and not already in quizPassed, add it
     if (passed) {

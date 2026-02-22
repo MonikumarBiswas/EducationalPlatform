@@ -50,9 +50,9 @@ app.get("/selectdashboard", showDashboard);
 app.post("/enroll/:id", enroll);
 
 // Quiz routes
-app.post("/quiz/:courseId", quizcontroller.uploadQuiz);      // Teacher uploads quiz
-app.get("/quiz/:courseId", quizcontroller.getQuiz);           // Get quiz questions
-app.post("/quiz/:courseId/submit", quizcontroller.submitQuiz); // Student submits answers
+app.post("/quiz/:courseId", quizcontroller.uploadQuiz);      
+app.get("/quiz/:courseId", quizcontroller.getQuiz);           
+app.post("/quiz/:courseId/submit", quizcontroller.submitQuiz); 
 
 // Certificate
 app.get("/certificate/:userId/:courseId", generateCertificate);

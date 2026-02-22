@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 
 const questionSchema = new mongoose.Schema({
   question: { type: String, required: true },
-  options: [{ type: String }], // 4 options
-  answer: { type: Number, required: true }, // index of correct option (0-3)
+  options: [{ type: String }], 
+  answer: { type: Number, required: true }, 
 });
 
 const courseSchema = new mongoose.Schema(

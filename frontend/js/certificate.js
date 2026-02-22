@@ -15,7 +15,7 @@ async function loadCertificate() {
 
     if (data.message) {
       // Error from backend
-      document.getElementById("errorMsg").textContent = "⚠️ " + data.message;
+      document.getElementById("errorMsg").textContent = data.message;
       document.getElementById("errorMsg").classList.remove("hidden");
       return;
     }

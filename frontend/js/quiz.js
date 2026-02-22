@@ -2,6 +2,7 @@ const params = new URLSearchParams(window.location.search);
 const courseId = params.get("courseId");
 const userID = localStorage.getItem("userID");
 
+
 const loadMsg = document.getElementById("loadMsg");
 const quizForm = document.getElementById("quizForm");
 const questionsContainer = document.getElementById("questionsContainer");
